@@ -1,0 +1,30 @@
+#Python BMI Calculator
+
+name=input("Enter Your Name:")
+Weight=input("Enter your Weight in Kg: ") #Stores in strings so conversion is needed.
+height_Foot,height_inchess=input("Enter your Height in Foot and Inches:") #Stores in strings so conversion is needed.
+foot=int(height_Foot)
+inches=int(height_inchess)
+height_Foot=foot*12
+height_inches=inches+height_Foot
+
+height_meter=height_inches*0.0254
+weight_kg=int(Weight)
+BMI=weight_kg/(height_meter**2)
+print(BMI)
+
+if BMI>0:
+  if BMI<=18.5:
+    print(f"{name}"+" You are Underweight")
+  elif BMI>18.5 and BMI<24.9:
+    print(f"{name}"+" You are Normal Weight")
+  elif BMI>=25 and BMI<29.9:
+    print(f"{name}"+" Overweight")
+  elif BMI>=30 and BMI<34.9:
+    print(f"{name}"+" Obese")
+  elif BMI>=35 and BMI<39.9:
+    print(f"{name}"+" Severely Obese")
+  elif BMI>=40:
+    print(f"{name}"+" Morbidly Obese")
+else:
+  print("Enter Valid Inputs")
